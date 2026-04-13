@@ -147,3 +147,43 @@ export async function updateContext(id, updates) {
 export async function deleteContext(id) {
   return request(`/contexts/${id}`, { method: 'DELETE' });
 }
+
+// ── Reference Docs ───────────────────────────────────────────────────
+export async function getReferenceDocs(projectId) {
+  return request(`/projects/${projectId}/docs`);
+}
+
+export async function createReferenceDoc(projectId, { title, content, sourceUrl }) {
+  return request(`/projects/${projectId}/docs`, {
+    method: 'POST',
+    body: JSON.stringify({ title, content, sourceUrl }),
+  });
+}
+
+export async function updateReferenceDoc(projectId, docId, updates) {
+  return request(`/projects/${projectId}/docs/${docId}`, {
+    method: 'PATCH',
+    body: JSON.stringify(updates),
+  });
+}
+
+export async function deleteReferenceDoc(projectId, docId) {
+  return request(`/projects/${projectId}/docs/${docId}`, { method: 'DELETE' });
+}
+
+// ── AI Suggestions ───────────────────────────────────────────────────
+export async function decomposeProject(projectId) {
+  return request(`/projects/${projectId}/decompose`, { method: 'POST' });
+}
+
+export async function getSuggestions(projectId) {
+  return request(`/projects/${projectId}/suggestions`);
+}
+
+export async function acceptSuggestion(id) {
+  return request(`/projects/suggestions/${id}/accept`, { method: 'POST' });
+}
+
+export async function dismissSuggestion(id) {
+  return request(`/projects/suggestions/${id}`, { method: 'DELETE' });
+}

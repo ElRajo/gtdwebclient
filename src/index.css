@@ -539,6 +539,60 @@ h3 {
   font-size: 1.1rem;
 }
 
+/* ── Section headers ──────────────────────────────────────────────── */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-header h3 {
+  margin: 0;
+}
+
+/* ── AI Suggestions ───────────────────────────────────────────────── */
+.ai-loading {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  color: #1e40af;
+  font-size: 0.875rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.suggestion-card {
+  border-left: 3px solid var(--primary);
+}
+
+.suggestion-actions-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.text-muted {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ── Reference doc preview ────────────────────────────────────────── */
+.doc-preview {
+  white-space: pre-wrap;
+  font-size: 0.8rem;
+  max-height: 3.6rem;
+  overflow: hidden;
+}
+
 /* ── Responsive ───────────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .app { flex-direction: column; }
